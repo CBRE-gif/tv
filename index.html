@@ -5,27 +5,51 @@
   <meta http-equiv="refresh" content="43200"> <!-- Reload hver 12. time -->
   <title>Google Slides Slideshow</title>
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
+    body, html {
+      margin: 0; 
+      padding: 0; 
       height: 100%;
-      background: black;
-      overflow: hidden;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       cursor: none; /* Skjul musen */
     }
     iframe {
-      border: none;
       width: 100vw;
       height: 100vh;
+      border: none;
     }
   </style>
 </head>
 <body>
   <iframe 
   src="https://docs.google.com/presentation/d/e/2PACX-1vSKnDdhNVrRCDnHLJI75WDduIznt13Fl-4OPpw_qPx2ZXcAujwf8nTTCl42NpKBGhMX0Q49krSK1PRN/pubembed?start=true&loop=true&delayms=30000&rm=minimal" 
-  allowfullscreen="true" 
-  mozallowfullscreen="true" 
-  webkitallowfullscreen="true"
-  ></iframe>
+  frameborder="0"
+  width="100%"
+  height="100%"
+  allowfullscreen="true"
+  mozallowfullscreen="true"
+  webkitallowfullscreen="true">
+</iframe>
+    <script>
+    // Forsøg at åbne fullscreen (virker kun på visse enheder og browsere)
+    function launchFullScreen(element) {
+      if (element.requestFullscreen) {
+        element.requestFullscreen();
+      } else if (element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+      } else if (element.webkitRequestFullscreen) {
+        element.webkitRequestFullscreen();
+      } else if (element.msRequestFullscreen) {
+        element.msRequestFullscreen();
+      }
+    }
+
+    window.onload = function () {
+      const iframe = document.querySelector("iframe");
+      launchFullScreen(document.documentElement);
+    };
+  </script>
 </body>
 </html>
