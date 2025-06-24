@@ -24,7 +24,7 @@
 </head>
 <body>
   <iframe 
-  src="https://docs.google.com/presentation/d/e/2PACX-1vSKnDdhNVrRCDnHLJI75WDduIznt13Fl-4OPpw_qPx2ZXcAujwf8nTTCl42NpKBGhMX0Q49krSK1PRN/pubembed?start=true&loop=true&delayms=30000&rm=minimal" 
+  src="https://docs.google.com/presentation/d/e/2PACX-1vSKnDdhNVrRCDnHLJI75WDduIznt13Fl-4OPpw_qPx2ZXcAujwf8nTTCl42NpKBGhMX0Q49krSK1PRN/pubembed?start=true&loop=true&delayms=30000" 
   frameborder="0"
   width="100%"
   height="100%"
@@ -32,24 +32,5 @@
   mozallowfullscreen="true"
   webkitallowfullscreen="true">
 </iframe>
-    <script>
-    // Forsøg at åbne fullscreen (virker kun på visse enheder og browsere)
-    function launchFullScreen(element) {
-      if (element.requestFullscreen) {
-        element.requestFullscreen();
-      } else if (element.mozRequestFullScreen) {
-        element.mozRequestFullScreen();
-      } else if (element.webkitRequestFullscreen) {
-        element.webkitRequestFullscreen();
-      } else if (element.msRequestFullscreen) {
-        element.msRequestFullscreen();
-      }
-    }
-
-    window.onload = function () {
-      const iframe = document.querySelector("iframe");
-      launchFullScreen(document.documentElement);
-    };
-  </script>
 </body>
 </html>
